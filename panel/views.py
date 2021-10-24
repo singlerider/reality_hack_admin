@@ -1,9 +1,11 @@
 from django.contrib.auth.models import Group
 from rest_framework import viewsets
 from rest_framework import permissions
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from panel.models import Attendant, Project, AuthUser, Table, Team, RealityKit
-from panel.serializers import AttendantSerializer, ProjectSerializer, AuthUserSerializer, GroupSerializer, TableSerializer, TeamSerializer, RealityKitSerializer
+from panel.serializers import AttendantSerializer, ProjectSerializer, AuthUserSerializer, GroupSerializer, TableSerializer, TeamSerializer, RealityKitSerializer, RealityKitMessageSerializer
 
 
 class AuthUserViewSet(viewsets.ModelViewSet):
@@ -55,6 +57,11 @@ class TeamViewSet(viewsets.ModelViewSet):
     """
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+
+    @action(detail=True, methods=['post'])
+    def send_message(self, request, pk=None):
+        serializer = RealityKitMessageSerializer
+        return Response({'status': 'message sent'})
 
 
 class RealityKitViewSet(viewsets.ModelViewSet):

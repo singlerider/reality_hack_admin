@@ -36,13 +36,31 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
         ]
 
 
+class RealityKitMessageSerializer(serializers.Serializer):
+
+    class RealityKitFramesMessagePayloadField(serializers.DictField):
+        time_to_live = serializers.FloatField(min_value=0.0)
+        display = serializers.ListField(
+            child=serializers.ListField(
+                child=serializers.IntegerField(min_value=0, max_value=255),
+                min_length=3, max_length=3
+            ),
+            min_length=64, max_length=64
+        )
+
+    priority = serializers.IntegerField(min_value=0, max_value=3)
+    payload = serializers.ListField(
+        child=RealityKitFramesMessagePayloadField()
+    )
+
+
 class RealityKitSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = RealityKit
         fields = [
             'url', 'address', 'table'
-        ]
+        ]   
 
 
 class TableSerializer(serializers.HyperlinkedModelSerializer):
