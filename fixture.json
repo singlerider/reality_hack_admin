@@ -1,0 +1,128 @@
+[
+{
+    "model": "panel.authuser",
+    "pk": "159900e2-4c80-44fe-9c1f-d37eb5395d94",
+    "fields": {
+        "password": "pbkdf2_sha256$260000$c1Yx8B66pmNRTitxyBqpf1$cjBousTDUV0wz+qFNaFFQg3AtNWHpnjl3LsNrVF6pMo=",
+        "last_login": "2021-10-24T02:10:08.402Z",
+        "is_superuser": true,
+        "username": "singlerider",
+        "first_name": "",
+        "last_name": "",
+        "email": "contact@shane.gg",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-10-24T02:09:52.578Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "panel.attendant",
+    "pk": "7f03e20a-4a51-4d3c-aefd-37beadf0bcc7",
+    "fields": {
+        "first_name": "Shane",
+        "last_name": "Engelman",
+        "core_competencies": "Python, Javascript, Whatever",
+        "participant": false,
+        "organizer": true,
+        "mentor": true,
+        "remote": false,
+        "bio": "Decent person, I guess."
+    }
+},
+{
+    "model": "panel.attendant",
+    "pk": "ceaceb4f-a9cd-4806-a7f4-f4c3c98828e7",
+    "fields": {
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "core_competencies": "Literally anything",
+        "participant": true,
+        "organizer": false,
+        "mentor": false,
+        "remote": false,
+        "bio": "The greatest programmer that's ever been."
+    }
+},
+{
+    "model": "panel.project",
+    "pk": "73864766-0104-471e-898e-3693fe362645",
+    "fields": {
+        "name": "First Project Idea",
+        "category": "OO",
+        "repository": "https://github.com/augustluhrs/HackTheHack_RaspiGuide",
+        "submitted_by": "7f03e20a-4a51-4d3c-aefd-37beadf0bcc7"
+    }
+},
+{
+    "model": "panel.project",
+    "pk": "bcea3d9e-0eae-4e1a-9b4b-3a53414657c5",
+    "fields": {
+        "name": "Second Project Idea",
+        "category": "OT",
+        "repository": "https://github.com/augustluhrs/HackTheHack_RaspiGuide",
+        "submitted_by": "ceaceb4f-a9cd-4806-a7f4-f4c3c98828e7"
+    }
+},
+{
+    "model": "panel.table",
+    "pk": "a8afce50-1b20-4ae4-ba12-f328f769e2c9",
+    "fields": {
+        "number": 1,
+        "location": "Atlantis"
+    }
+},
+{
+    "model": "panel.table",
+    "pk": "bea4ae76-aa22-459d-96ad-90f5db679a91",
+    "fields": {
+        "number": 2,
+        "location": "Atlantis"
+    }
+},
+{
+    "model": "panel.team",
+    "pk": "255ddae5-31fc-4bdf-b349-df841df9945f",
+    "fields": {
+        "name": "team 0ne",
+        "project": "bcea3d9e-0eae-4e1a-9b4b-3a53414657c5",
+        "participants": [
+            "ceaceb4f-a9cd-4806-a7f4-f4c3c98828e7"
+        ],
+        "tables": [
+            "bea4ae76-aa22-459d-96ad-90f5db679a91"
+        ]
+    }
+},
+{
+    "model": "panel.team",
+    "pk": "6565df82-6c23-4646-836b-b6c2498d9f05",
+    "fields": {
+        "name": "Team zer0",
+        "project": "73864766-0104-471e-898e-3693fe362645",
+        "participants": [
+            "7f03e20a-4a51-4d3c-aefd-37beadf0bcc7"
+        ],
+        "tables": [
+            "a8afce50-1b20-4ae4-ba12-f328f769e2c9"
+        ]
+    }
+},
+{
+    "model": "panel.realitykit",
+    "pk": "528c16d3-1ac5-4be3-991f-0ef231cf8d5f",
+    "fields": {
+        "address": "192.168.0.1",
+        "table": "a8afce50-1b20-4ae4-ba12-f328f769e2c9"
+    }
+},
+{
+    "model": "panel.realitykit",
+    "pk": "b2fda2c8-d1e2-4e10-93c5-7a37ec3ed347",
+    "fields": {
+        "address": "192.168.0.2",
+        "table": "bea4ae76-aa22-459d-96ad-90f5db679a91"
+    }
+}
+]
